@@ -1,16 +1,12 @@
 name: Build
 
-# **What it does**: This script once a day checks all English links and reports in issues.
-# **Why we have it**: We want to know if any links break.
-# **Who does it impact**: Docs content.
-
 on:
   push:
+    branches: '**'
   workflow_dispatch:
 
 jobs:
   build:
-    name: Check all links
     runs-on: ubuntu-20.04
 
     strategy:
@@ -18,10 +14,10 @@ jobs:
         node-version: [16.x]
 
     steps:
+      - uses: actions/checkout@v3
+
       - name: Check that gh CLI is installed
         run: gh --version
-
-      - uses: actions/checkout@v2
 
       - uses: yantantether/muffet-action
         
