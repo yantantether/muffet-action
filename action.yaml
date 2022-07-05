@@ -4,46 +4,48 @@ inputs:
   url:
     description: 'URL to scan'
     required: true
-  # buffer-size:
-  #   description: "HTTP response buffer size in bytes (default: 4096)"
-  # max-connections:
-  #   description: "Maximum number of HTTP connections (default: 512)"
-  # max-connections-per-host:
-  #   description: "Maximum number of HTTP connections per host (default: 512)"
-  # exclude:
-  #   description: "Exclude URLs matched with given regular expressions"
-  # include:
-  #   description: "Include URLs matched with given regular expressions"
-  # follow-robots-txt:
-  #   description: "Follow robots.txt when scraping pages"
-  # follow-sitemap-xml:
-  #   description: "Scrape only pages listed in sitemap.xml"
-  # header:
-  #   description: "Custom headers"
-  # ignore-fragments:
-  #   description: "Ignore URL fragments"
-  # json:
-  #   description: "Output results in JSON"
-  # max-redirections:
-  #   description: "Maximum number of redirections (default: 64)"
-  # rate-limit:
-  #   description: "Max requests per second"
-  # timeout:
-  #   description: "Timeout for HTTP requests in seconds (default: 10)"
-  # verbose:
-  #   description: "Show successful results too"
-  # skip-tls-verification:
-  #   description: "Skip TLS certificate verification"
-  # one-page-only:
-  #   description: "Only check links found in the given URL"
-  # color:
-  #   description: "Color output (default: auto)"
-  # help:
-  #   description: "Show help"
-  # version:
-  #   description: "Show version"
+  buffer_size:
+    description: "HTTP response buffer size in bytes (default: 4096)"
+    required: false
+  max_connections:
+    description: "Maximum number of HTTP connections (default: 512)"
+  max_connections_per_host:
+    description: "Maximum number of HTTP connections per host (default: 512)"
+  exclude:
+    description: "Exclude URLs matched with given regular expressions"
+  include:
+    description: "Include URLs matched with given regular expressions"
+  follow_robots_txt:
+    description: "Follow robots.txt when scraping pages"
+  follow_sitemap_xml:
+    description: "Scrape only pages listed in sitemap.xml"
+  header:
+    description: "Custom headers"
+  ignore_fragments:
+    description: "Ignore URL fragments"
+  json:
+    description: "Output results in JSON"
+  max_redirections:
+    description: "Maximum number of redirections (default: 64)"
+  rate_limit:
+    description: "Max requests per second"
+  timeout:
+    description: "Timeout for HTTP requests in seconds (default: 10)"
+  verbose:
+    description: "Show successful results too"
+  skip_tls_verification:
+    description: "Skip TLS certificate verification"
+  one_page_only:
+    description: "Only check links found in the given URL"
+    required: false
+  color:
+    description: "Color output (default: auto)"
+  help:
+    description: "Show help"
+  version:
+    description: "Show version"
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.url }}`
+  args: 
+    - ${{ inputs.url }}
