@@ -3,5 +3,6 @@ FROM raviqqe/muffet
 
 RUN apk add bash
 
-ENTRYPOINT ["entrypoint.sh"]
+COPY entrypoint.sh /bin
 
+ENTRYPOINT ["/bin/entrypoint.sh"]
